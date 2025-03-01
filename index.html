@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Management System</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="form-container">
+      <div class="progress-container">
+        <div class="step active" data-page="1">
+          <div class="step-number">1</div>
+          <div class="step-text">Page 1</div>
+        </div>
+        <div class="step" data-page="2">
+          <div class="step-number">2</div>
+          <div class="step-text">Page 2</div>
+        </div>
+        <div class="step" data-page="3">
+          <div class="step-number">3</div>
+          <div class="step-text">Page 3</div>
+        </div>
+        <div class="step" data-page="4">
+          <div class="step-number">4</div>
+          <div class="step-text">Page 4</div>
+        </div>
+      </div>
+
+      <!-- Form pages -->
+      <div class="form-pages">
+        <!-- Page 1: Registration Details -->
+        <div class="page active" id="page1">
+          <div class="page-header">
+            <h2><i class="fas fa-plus"></i> ADD NEW STUDENT</h2>
+          </div>
+          
+          <div class="form-content">
+            <div class="form-layout">
+              <div class="photo-section">
+                <button class="photo-btn">Add Photo</button>
+                <div class="photo-placeholder">
+                  <img src="https://img.freepik.com/free-photo/education-concept-books-with-apple_23-2147655352.jpg" alt="Student placeholder">
+                </div>
+                <button class="upload-btn"><i class="fas fa-upload"></i> Upload Picture</button>
+              </div>
+              
+              <div class="form-fields">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="name">Name <span class="required">*</span></label>
+                    <input type="text" id="name" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="admission-number">Admission Number <span class="required">*</span></label>
+                    <input type="text" id="admission-number" required>
+                  </div>
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="class">Class <span class="required">*</span></label>
+                    <div class="select-wrapper">
+                      <select id="class" required>
+                        <option value="" disabled selected>Select Class</option>
+                        <option value="1">Class 1</option>
+                        <option value="2">Class 2</option>
+                        <option value="3">Class 3</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="section">Section</label>
+                    <div class="select-wrapper">
+                      <select id="section">
+                        <option value="" disabled selected>Select Section</option>
+                        <option value="A">Section A</option>
+                        <option value="B">Section B</option>
+                        <option value="C">Section C</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="roll-number">Roll Number</label>
+                    <input type="text" id="roll-number">
+                  </div>
+                  <div class="form-group">
+                    <label for="emis">EMIS</label>
+                    <input type="text" id="emis">
+                  </div>
+                </div>
+              </div>
+              
+              <div class="sidebar">
+                <div class="sidebar-text">Registration Details</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-navigation">
+            <button class="nav-btn prev-btn" disabled><i class="fas fa-arrow-left"></i> Previous</button>
+            <button class="nav-btn next-btn" data-next="2"><i class="fas fa-arrow-right"></i> Next</button>
+          </div>
+        </div>
+        
+        <!-- Page 2: Personal Details -->
+        <div class="page" id="page2">
+          <div class="form-content">
+            <div class="form-layout">
+              <div class="form-fields wide-fields">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <div class="select-wrapper">
+                      <select id="gender">
+                        <option value="" disabled selected>Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="community">Community</label>
+                    <div class="select-wrapper">
+                      <select id="community">
+                        <option value="" disabled selected>Select Community</option>
+                        <option value="bc">BC</option>
+                        <option value="mbc">MBC</option>
+                        <option value="sc">SC</option>
+                        <option value="st">ST</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="tamil-name">Tamil Name</label>
+                    <input type="text" id="tamil-name">
+                  </div>
+                  <div class="form-group">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" id="dob" placeholder="dd-mm-yyyy">
+                  </div>
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="nationality">Nationality</label>
+                    <input type="text" id="nationality">
+                  </div>
+                  <div class="form-group">
+                    <label for="blood-group">Blood Group</label>
+                    <input type="text" id="blood-group">
+                  </div>
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="mother-tongue">Mother Tongue</label>
+                    <input type="text" id="mother-tongue">
+                  </div>
+                  <div class="form-group">
+                    <label for="caste">Caste</label>
+                    <input type="text" id="caste">
+                  </div>
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="religion">Religion</label>
+                    <input type="text" id="religion">
+                  </div>
+                  <div class="form-group">
+                    <label for="place-of-birth">Place of Birth- City / State</label>
+                    <input type="text" id="place-of-birth">
+                  </div>
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="aadhaar">Aadhaar Number</label>
+                    <input type="text" id="aadhaar">
+                  </div>
+                  <div class="form-group">
+                    <label for="disability">Disability</label>
+                    <input type="text" id="disability">
+                  </div>
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="id-mark1">Personal Identification mark 1</label>
+                    <input type="text" id="id-mark1">
+                  </div>
+                  <div class="form-group">
+                    <label for="id-mark2">Personal Identification mark 2</label>
+                    <input type="text" id="id-mark2">
+                  </div>
+                </div>
+              </div>
+              
+              <div class="sidebar">
+                <div class="sidebar-text">Personal Details</div>
+              </div>
+              
+              <div class="class-details">
+                <h3>Class Details</h3>
+                <div class="form-group">
+                  <label for="current-class">Current Class <span class="required">*</span></label>
+                  <div class="select-wrapper">
+                    <select id="current-class" required>
+                      <option value="" disabled selected>Select Class</option>
+                      <option value="1">Class 1</option>
+                      <option value="2">Class 2</option>
+                      <option value="3">Class 3</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="admission-class">Admission Class</label>
+                  <input type="text" id="admission-class">
+                </div>
+                
+                <div class="form-group">
+                  <label for="admission-year">Admission Year</label>
+                  <input type="text" id="admission-year">
+                </div>
+                
+                <div class="form-group">
+                  <label for="admission-date">Admission Date</label>
+                  <input type="date" id="admission-date" placeholder="dd-mm-yyyy">
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-navigation">
+            <button class="nav-btn prev-btn" data-prev="1"><i class="fas fa-arrow-left"></i> Previous</button>
+            <button class="nav-btn next-btn" data-next="3"><i class="fas fa-arrow-right"></i> Next</button>
+          </div>
+        </div>
+        
+        <!-- Page 3: Communication Details -->
+        <div class="page" id="page3">
+          <div class="form-content">
+            <div class="form-layout">
+              <div class="form-fields wide-fields">
+                <div class="contact-section">
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="email">Email ID</label>
+                      <input type="email" id="email">
+                    </div>
+                    <div class="form-group address-group">
+                      <label for="address">Address</label>
+                      <textarea id="address" rows="4"></textarea>
+                    </div>
+                  </div>
+                  
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="contact">Contact Number (Whatsapp)</label>
+                      <input type="tel" id="contact">
+                    </div>
+                  </div>
+                  
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="alt-contact">Alternate Contact Number</label>
+                      <input type="tel" id="alt-contact">
+                    </div>
+                    <div class="form-group">
+                      <label for="country">Country</label>
+                      <input type="text" id="country">
+                    </div>
+                  </div>
+                  
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="state">State</label>
+                      <input type="text" id="state">
+                    </div>
+                    <div class="form-group">
+                      <label for="city">City</label>
+                      <input type="text" id="city">
+                    </div>
+                  </div>
+                  
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="pincode">Pin Code</label>
+                      <input type="text" id="pincode">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="sidebar">
+                <div class="sidebar-text">Communication Details</div>
+              </div>
+              
+              <div class="generic-details">
+                <h3>Generic Details</h3>
+                <div class="form-group">
+                  <label for="status">Status</label>
+                  <input type="text" id="status">
+                </div>
+                
+                <div class="form-group">
+                  <label for="house">House</label>
+                  <input type="text" id="house">
+                </div>
+                
+                <div class="form-group">
+                  <label for="teacher-ward">Teacher Ward</label>
+                  <div class="select-wrapper">
+                    <select id="teacher-ward">
+                      <option value="" disabled selected>Select</option>
+                      <option value="yes">Yes</option>
+                      <option value="no">No</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="rte">RTE</label>
+                  <div class="select-wrapper">
+                    <select id="rte">
+                      <option value="" disabled selected>Select</option>
+                      <option value="yes">Yes</option>
+                      <option value="no">No</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="sports-quota">Sports Quota</label>
+                  <div class="select-wrapper">
+                    <select id="sports-quota">
+                      <option value="" disabled selected>Select</option>
+                      <option value="yes">Yes</option>
+                      <option value="no">No</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="prev-school">Previous School Studied</label>
+                  <input type="text" id="prev-school">
+                </div>
+                
+                <div class="form-group">
+                  <label for="prev-board">Previous School Board</label>
+                  <input type="text" id="prev-board">
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-navigation">
+            <button class="nav-btn prev-btn" data-prev="2"><i class="fas fa-arrow-left"></i> Previous</button>
+            <button class="nav-btn next-btn" data-next="4"><i class="fas fa-arrow-right"></i> Next</button>
+          </div>
+        </div>
+        
+        <!-- Page 4: Parents Details and Medical Info -->
+        <div class="page" id="page4">
+          <div class="form-content">
+            <div class="form-layout">
+              <div class="form-fields wide-fields">
+                <div class="parents-section">
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="father-name">Father Name</label>
+                      <input type="text" id="father-name">
+                    </div>
+                    <div class="form-group">
+                      <label for="father-name-tamil">Father Name (Tamil)</label>
+                      <input type="text" id="father-name-tamil">
+                    </div>
+                  </div>
+                  
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="mother-name">Mother Name</label>
+                      <input type="text" id="mother-name">
+                    </div>
+                    <div class="form-group">
+                      <label for="mother-name-tamil">Mother Name (Tamil)</label>
+                      <input type="text" id="mother-name-tamil">
+                    </div>
+                  </div>
+                  
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="father-contact">Father Contact Number</label>
+                      <input type="tel" id="father-contact">
+                    </div>
+                    <div class="form-group">
+                      <label for="mother-contact">Mother Contact Number</label>
+                      <input type="tel" id="mother-contact">
+                    </div>
+                  </div>
+                  
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="father-email">Father Email</label>
+                      <input type="email" id="father-email">
+                    </div>
+                    <div class="form-group">
+                      <label for="mother-email">Mother Email</label>
+                      <input type="email" id="mother-email">
+                    </div>
+                  </div>
+                  
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="father-qualification">Father Qualification</label>
+                      <input type="text" id="father-qualification">
+                    </div>
+                    <div class="form-group">
+                      <label for="mother-qualification">Mother Qualification</label>
+                      <input type="text" id="mother-qualification">
+                    </div>
+                  </div>
+                  
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="father-occupation">Father Occupation</label>
+                      <input type="text" id="father-occupation">
+                    </div>
+                    <div class="form-group">
+                      <label for="mother-occupation">Mother Occupation</label>
+                      <input type="text" id="mother-occupation">
+                    </div>
+                  </div>
+                  
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="father-income">Father Income (Annual)</label>
+                      <input type="text" id="father-income">
+                    </div>
+                    <div class="form-group">
+                      <label for="mother-income">Mother Income (Annual)</label>
+                      <input type="text" id="mother-income">
+                    </div>
+                  </div>
+                  
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="guardian-name">Guardian Name</label>
+                      <input type="text" id="guardian-name">
+                    </div>
+                    <div class="form-group">
+                      <label for="guardian-contact">Guardian Contact Number</label>
+                      <input type="tel" id="guardian-contact">
+                    </div>
+                  </div>
+                  
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="guardian-email">Guardian Email</label>
+                      <input type="email" id="guardian-email">
+                    </div>
+                    <div class="form-group">
+                      <label for="child-living">Child Living with</label>
+                      <input type="text" id="child-living">
+                    </div>
+                  </div>
+                  
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="rights">Rights On Child</label>
+                      <input type="text" id="rights">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="sidebar">
+                <div class="sidebar-text">Parents Details</div>
+              </div>
+              
+              <div class="medical-info">
+                <h3>Medical Info</h3>
+                <div class="form-group">
+                  <label for="med-blood-group">Blood Group</label>
+                  <input type="text" id="med-blood-group">
+                </div>
+                
+                <div class="form-group">
+                  <label for="diseases">Diseases (If Any)</label>
+                  <input type="text" id="diseases">
+                </div>
+                
+                <div class="form-group">
+                  <label for="allergies">Allergies (If Any)</label>
+                  <input type="text" id="allergies">
+                </div>
+                
+                <div class="form-group">
+                  <label for="medicines">Medicines</label>
+                  <input type="text" id="medicines">
+                </div>
+                
+                <div class="form-group">
+                  <label for="hospital">Regular Hospital</label>
+                  <input type="text" id="hospital">
+                </div>
+                
+                <div class="form-group">
+                  <label for="doctor">Regular Doctor</label>
+                  <input type="text" id="doctor">
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-navigation">
+            <button class="nav-btn prev-btn" data-prev="3"><i class="fas fa-arrow-left"></i> Previous</button>
+            <button class="nav-btn submit-btn">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
